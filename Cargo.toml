@@ -11,6 +11,8 @@ license = "Apache-2.0 WITH LLVM-exception OR MIT"
 
 [dependencies]
 bencher = "0.1"
+lucet-runtime = { path = "../lucet-runtime" }
+lucet-wasi = { path = "../lucet-wasi" }
 clap = "2"
 failure = "0.1"
 goblin = "0.0"

@@ -21,6 +21,8 @@ use std::process;
 
 fn _main() -> Result<(), BenchError> {
     let config = Config::parse()?;
+    lucet_runtime::lucet_internal_ensure_linked();
+    lucet_wasi::export_wasi_funcs();
     let _ = cpu_affinity::tune(&config);
     bench(&config)?;
     Ok(())
