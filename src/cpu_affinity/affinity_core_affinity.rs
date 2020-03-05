@@ -11,11 +11,11 @@ pub fn tune(config: &Config) -> Result<(), BenchError> {
 
 /// Bind the current thread to a single CPU core
 fn bind_to_single_core() -> Result<(), BenchError> {
-    let core_ids =
-        core_affinity::get_core_ids().ok_or(BenchError::InternalError("Empty CPU set"))?;
-    let last_core = core_ids
-        .last()
-        .ok_or(BenchError::InternalError("Zero CPU cores detected"))?;
-    core_affinity::set_for_current(*last_core);
+    // let core_ids =
+    //     core_affinity::get_core_ids().ok_or(BenchError::InternalError("Empty CPU set"))?;
+    // let chosen = core_ids[0];
+    //     .last()
+    //     .ok_or(BenchError::InternalError("Zero CPU cores detected"))?;
+    // core_affinity::set_for_current(*chosen);
     Ok(())
 }
